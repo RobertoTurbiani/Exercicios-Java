@@ -16,19 +16,19 @@ public class Tabuada {
 
 
 
-        Integer valorI = leitor.nextInt();
-        Integer escolha = leitor.nextInt();
+        Double valorI = leitor.nextDouble();
+        Double escolha = leitor.nextDouble();
 
         Double resultado = 0.0;
 
-        if (valorI.equals(1)) {
+        if (valorI.equals(1.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
                 resultado = escolha + i;
 
                 String mensagem = String.format("""
-                    %d + %d = %d
+                    %2f + %d = %2f
                     """, escolha, i, resultado);
 
 
@@ -36,14 +36,14 @@ public class Tabuada {
             }
         }
 
-        if (valorI.equals(2)) {
+        if (valorI.equals(2.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
                 resultado = escolha * i;
 
                 String mensagem = String.format("""
-                    %d * %d = %d
+                    %2f * %d = %2f
                     """, escolha, i, resultado);
 
 
@@ -51,14 +51,14 @@ public class Tabuada {
             }
         }
 
-        if (valorI.equals(3)) {
+        if (valorI.equals(3.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
                 resultado = escolha / i;
 
                 String mensagem = String.format("""
-                    %d / %d = %d
+                    %2f / %d = %2f
                     """, escolha, i, resultado);
 
 
@@ -66,14 +66,14 @@ public class Tabuada {
             }
         }
 
-        if (valorI.equals(4)) {
+        if (valorI.equals(4.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
                 resultado = escolha - i;
 
                 String mensagem = String.format("""
-                    %d - %d = %d
+                    %2f - %d = %2f
                     """, escolha, i, resultado);
 
 
@@ -81,14 +81,14 @@ public class Tabuada {
             }
         }
 
-        if (valorI.equals(5)) {
+        if (valorI.equals(5.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
-                resultado = escolha * i;
+                resultado = Math.pow(escolha, i) ;
 
                 String mensagem = String.format("""
-                    %d - %d = %d
+                    %2f - %d = %2f
                     """, escolha, i, resultado);
 
 
@@ -96,15 +96,15 @@ public class Tabuada {
             }
         }
 
-        if (valorI.equals(6)) {
+        if (valorI.equals(6.0)) {
 
             for (int i = 1; i <=10 ; i++) {
 
                 resultado = escolha % i;
 
                 String mensagem = String.format("""
-                    %d - %d = %d
-                    """, escolha, i, porcent);
+                    %2f - %d = %2f
+                    """, escolha, i, resultado);
 
 
                 System.out.println(mensagem);
