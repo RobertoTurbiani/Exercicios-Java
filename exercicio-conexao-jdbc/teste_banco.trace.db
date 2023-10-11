@@ -1,0 +1,7 @@
+2023-10-08 19:22:15.412871-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILME" already exists; SQL statement:
+CREATE TABLE filme (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+ano_lancamento INT
+) [42101-222]

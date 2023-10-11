@@ -1,0 +1,29 @@
+2023-10-08 20:17:38.051938-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILME" not found; SQL statement:
+INSERT INTO filme (nome, preco) VALUES ('Vingadores 2', 2017) [42102-222]
+2023-10-08 20:22:16.232693-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILME" not found; SQL statement:
+INSERT INTO filme (nome, preco) VALUES (?,? ) [42102-222]
+2023-10-08 20:23:56.126305-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+INSERT INTO livraria (nome, preco) VALUES (?,? ) [90012-222]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:658)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:75)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:207)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:159)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:511)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:508)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:523)
+	at livraria.TesteLivro.main(TesteLivro.java:52)
+2023-10-08 21:01:39.531549-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "update livraria set nome = ?,preco = ?,[*]where id = ?"; expected "identifier"; SQL statement:
+update livraria set nome = ?,preco = ?,where id = ? [42001-222]
