@@ -4,8 +4,6 @@ public class Filme {
     private Integer anoLancamento;
     private Boolean assistido;
 
-
-
     public Filme(Integer id, String nome, Integer anoLancamento) {
         this.id = id;
         this.nome = nome;
@@ -13,8 +11,10 @@ public class Filme {
         this.assistido = false;
     }
 
-    public void assitir(){
-        assistido = !assistido;
+    public void assistir(){
+        if(!assistido){
+            assistido = !assistido;
+        }
     }
 
     public Integer getId() {
@@ -39,7 +39,6 @@ public class Filme {
 
     public void setAnoLancamento(Integer anoLancamento) {
         this.anoLancamento = anoLancamento;
-
     }
 
     public Boolean getAssistido() {
@@ -52,12 +51,12 @@ public class Filme {
 
     @Override
     public String toString() {
-        String jaAssistido = (assistido) ? "Já assisti": "Não vi ainda";
+        String jaAssistido = (assistido) ? "Já assisti" : "Não vi ainda";
         return """
-                id %d
-                nome %s
-                ano lançamento %d
-                Já assistido? %s
-                """.formatted(id,nome,anoLancamento,jaAssistido);
+                id: %d
+                nome: %s
+                ano lançamento: %d
+                já assistido: %s
+                """.formatted(id, nome, anoLancamento, jaAssistido);
     }
 }

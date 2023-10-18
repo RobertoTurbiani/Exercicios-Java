@@ -1,57 +1,50 @@
-package empresa;
+package Empresa;
 
 public class RecursosHumanos {
-   private Integer totalpromovidos = 0;
-   private Integer totalSalarioReajuste = 0;
+    private Double totalDePromovidos;
+    private Double totalDeSalariosReajustados;
 
-  public void reajustarSalario(Colaborador colaborador, Double reajuste){
+    public RecursosHumanos(Double totalDePromovidos, Double totalDeSalariosReajustados) {
+        this.totalDePromovidos = totalDePromovidos;
+        this.totalDeSalariosReajustados = totalDeSalariosReajustados;
+    }
 
-      if (reajuste >= colaborador.getSalario()){
+    public void reajustarSalario(Colaborador colaborador, Double valorReajuste){
+        if(colaborador.getSalario() < valorReajuste) {
+            colaborador.setSalario(valorReajuste);
             promoverColaborador(colaborador);
-            colaborador.setSalario(reajuste);
 
+            System.out.println(String.format("""
+                    O reajuste salarial do funcionário foi de: %.2f
+                    """, valorReajuste));
 
-            totalpromovidos += 1;
-            totalSalarioReajuste += 1;
-              System.out.println("""
-                  Valor do salario %.2f
-                  """.formatted(colaborador.getSalario()));
-
-
-
-      } else {
-          System.out.println("O salario não pode ser menor do que o atual");
-      }
+        } else{
+            System.out.println("Operação inválida");
+        }
     }
 
-    public void  total (Integer totalpromovidos, Integer totalSalarioReajuste){
-        System.out.println("""
-                  Total promovidos: %d
-                  Total Salarios reajustados: %d
-                  """.formatted(totalpromovidos, totalSalarioReajuste));
+    public void promoverColaborador(Colaborador colaborador){
+        Double novoSalario = 10000.00;
+        String novoCargo = "Gestor";
+
+        colaborador.setSalario(novoSalario);
+        colaborador.setCargo(novoCargo);
+
+        if(colaborador.getSalario() > novoSalario){
+            System.out.println("Operação inválida");
+        } else{
+            System.out.println(String.format("""
+                Parabéns %s você foi promovido
+                Cargo novo: %s
+                Salário novo: %.2f
+                """, colaborador.getNome(), colaborador.getCargo(), colaborador.getSalario()));
+        }
     }
 
-    public void promoverColaborador(Colaborador colaborador ){
-
-        colaborador.setCargo("dev");
-
-    }
-
-    public Integer getTotalpromovidos() {
-        return totalpromovidos;
-    }
-
-    public void setTotalpromovidos(Integer totalpromovidos) {
-        this.totalpromovidos = totalpromovidos;
-    }
-
-    public Integer getTotalSalarioReajuste() {
-        return totalSalarioReajuste;
-    }
-
-    public void setTotalSalarioReajuste(Integer totalSalarioReajuste) {
-        this.totalSalarioReajuste = totalSalarioReajuste;
+    public void exibirPromocaoReajuste(){
+        System.out.println(String.format("""
+                Total de Promovidos: %.0f
+                Total de Salários reajustados: %.0f
+                """, totalDePromovidos, totalDeSalariosReajustados));
     }
 }
-
-

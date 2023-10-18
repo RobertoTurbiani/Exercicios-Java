@@ -1,27 +1,21 @@
 package bilhete;
 
 public class BilheteUnico {
-    // Atributos = Caracteristics
-
+    //Atributos = Características
     String nomeTitular;
-
     Double saldo;
 
+    //Métodos = Comportamentos
+
     void carregar(Double valor){
-
-        System.out.println(String.format("""
-               Saldo antes de carregar: %.2f
-                """, saldo));
-
-        // Mudando o saldo:
-
+        System.out.println(String.format(
+                """
+                Saldo antes de carregar: %.2f""", saldo));
+        //Mudando saldo:
         saldo += valor;
 
-        System.out.println(String.format("""
-               Saldo após de carregar: %.2f
-                """, saldo));
-
+        System.out.println(String.format(
+                """
+                Saldo após carregar: %.2f""", saldo));
     }
-
-    // Métodos = Comportamentos
 }

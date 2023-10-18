@@ -2,19 +2,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Acumulador {
     public static void main(String[] args) {
-
-        Integer sorteados = ThreadLocalRandom.current().nextInt(0,11);
-
+        Integer numeroSorteado = ThreadLocalRandom.current().nextInt(0, 10);
 
         int i = 0;
-        Integer soma = 0;
-        while(!sorteados.equals(0)) {
-
-            System.out.println(sorteados = ThreadLocalRandom.current().nextInt(0, 11));
-            soma += sorteados;
+        int soma = 0;
+        while(numeroSorteado != 0){
+            numeroSorteado = ThreadLocalRandom.current().nextInt(0, 10);
+            System.out.println(numeroSorteado);
+            soma += numeroSorteado;
             i++;
         }
-
-        System.out.println("A soma dos números é " + soma);
+        System.out.println("A soma dos números é: " + soma);
     }
 }

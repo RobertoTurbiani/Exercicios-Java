@@ -1,34 +1,32 @@
 package exercicio01;
 
 public class ClasseSocial {
-    Double qtdSalarios(Double num01){
-        return num01 / 1045;
+    Double qtdSalarios(Double salario){
+        return salario/1045;
     }
 
     String classificarClasseSocial(Double qtdSalarios){
         String classeSocial = "";
 
         if (qtdSalarios <= 2.0){
-            classeSocial = "e";
+            classeSocial = "E";
             return classeSocial;
         }
         else if(qtdSalarios <= 4.0){
-            classeSocial = "d";
+            classeSocial = "D";
             return classeSocial;
         }
         else if (qtdSalarios <= 10.0){
-            classeSocial = "c";
+            classeSocial = "C";
             return classeSocial;
         }
         else if (qtdSalarios <= 20.0) {
-            classeSocial = "b";
+            classeSocial = "B";
             return classeSocial;
         }
         else {
-            classeSocial = "a";
+            classeSocial = "A";
             return classeSocial;
         }
     }
-
-
 }

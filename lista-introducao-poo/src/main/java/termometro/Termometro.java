@@ -1,9 +1,15 @@
-package termometro;
+package Termometro;
 
 public class Termometro {
-    Double temperaturaAtual;
-    Double temperaturaMax;
-    Double temperaturaMin;
+    private Double temperaturaAtual;
+    private Double temperaturaMax;
+    private Double temperaturaMin;
+
+    public Termometro(Double temperaturaAtual, Double temperaturaMax, Double temperaturaMin){
+        this.temperaturaAtual = temperaturaAtual;
+        this.temperaturaMax = temperaturaMax;
+        this.temperaturaMin = temperaturaMin;
+    }
 
     void aumentaTemperatura(Double temperaturaAdicional){
         Double temperaturaAlterada = temperaturaAtual + temperaturaAdicional;
@@ -30,4 +36,27 @@ public class Termometro {
         System.out.println("Temperatura em Fahreinheit: " + F);
     }
 
+    public Double getTemperaturaAtual() {
+        return temperaturaAtual;
+    }
+
+    public void setTemperaturaAtual(Double temperaturaAtual) {
+        this.temperaturaAtual = temperaturaAtual;
+    }
+
+    public Double getTemperaturaMax(){
+        return temperaturaMax;
+    }
+
+    public void setTemperaturaMax(Double temperaturaMax){
+        this.temperaturaMax = temperaturaMax;
+    }
+
+    public Double getTemperaturaMin(){
+        return temperaturaMin;
+    }
+
+    public void setTemperaturaMin(Double temperaturaMin){
+        this.temperaturaMin = temperaturaMin;
+    }
 }

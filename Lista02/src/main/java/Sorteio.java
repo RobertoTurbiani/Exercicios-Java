@@ -2,31 +2,30 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Sorteio {
     public static void main(String[] args) {
-
-        Integer jogado = 15;
-        Integer sorteado = ThreadLocalRandom.current().nextInt(1,100);
+        Integer numeroEscolhido = 76;
+        Integer numeroSorteado = ThreadLocalRandom.current().nextInt(0, 100);
         Integer pares = 0;
         Integer impares = 0;
         Integer posicao = 0;
+        Boolean encontrado = false;
 
-        for (int i = 1; i <= 200 ; i++) {
+        for (int i = 1; i <= 200; i++) {
+            System.out.println(numeroSorteado = ThreadLocalRandom.current().nextInt(0,101));
 
-            if (sorteado % 2 == 0){
+            if(numeroSorteado % 2 == 0){
                 pares += 1;
-            } else {
+            } else{
                 impares += 1;
             }
 
-            System.out.println(sorteado = ThreadLocalRandom.current().nextInt(0,100));
-
-            if (sorteado.equals(jogado)){
+            if (numeroSorteado.equals(numeroEscolhido) && !encontrado){
                 posicao = i;
+                encontrado = false;
             }
 
         }
-        System.out.println("O número 15 apareceu pela primeira vez na Posicao " + posicao );
+        System.out.println("O número " + numeroEscolhido + " apareceu pela primeira vez na Posicao " + posicao);
         System.out.println("Números pares " + pares);
         System.out.println("Números impares " + impares);
     }
 }
-

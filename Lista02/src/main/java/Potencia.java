@@ -4,12 +4,11 @@ public class Potencia {
         Integer expoente = 5;
         Integer resultado = 1;
 
-             while (!expoente.equals(0) ) {
-                resultado = resultado * base;
+        while (!expoente.equals(0) ) {
+            resultado = resultado * base;
 
-                expoente--;
-             }
+            expoente--;
+        }
         System.out.println(resultado);
-
     }
 }

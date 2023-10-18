@@ -1,10 +1,11 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Tabuada {
     public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
 
-
-        Scanner leitor =  new Scanner(System.in);
+        System.out.println("\n Digíte o número correspondente a operação desejada: ");
 
         System.out.println("1 - para Soma");
         System.out.println("2 - para Multiplicação");
@@ -14,107 +15,78 @@ public class Tabuada {
         System.out.println("6 - para Porcentagem");
         System.out.println("0 - para Sair");
 
+        Integer operacaoMatematica = leitor.nextInt();
 
+        Integer resultado = 0;
 
-        Double valorI = leitor.nextDouble();
-        Double escolha = leitor.nextDouble();
+        if(operacaoMatematica.equals(1)){
+            System.out.println("Digite um número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
 
-        Double resultado = 0.0;
-
-        if (valorI.equals(1.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = escolha + i;
-
-                String mensagem = String.format("""
-                    %2f + %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
+            for(int i = 1; i <= 10; i++){
+                resultado = numeroEscolhido + i;
+                String resposta = String.format("""
+                        %d + %d = %d
+                        """, numeroEscolhido, i, resultado);
+                System.out.println(resposta);
             }
-        }
+        } else if (operacaoMatematica.equals(2)) {
+            System.out.println("Digite um número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
 
-        if (valorI.equals(2.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = escolha * i;
-
-                String mensagem = String.format("""
-                    %2f * %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
+            for (int i = 1; i <= 10; i++){
+                resultado = numeroEscolhido * i;
+                String resposta = String.format("""
+                        %d * %d = %d
+                        """, numeroEscolhido, i, resultado);
+                System.out.println(resposta);
             }
-        }
+        } else if (operacaoMatematica.equals(3)) {
+            System.out.println("Digite um número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
 
-        if (valorI.equals(3.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = escolha / i;
-
-                String mensagem = String.format("""
-                    %2f / %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
+            for (int i = 1; i <= 10; i++){
+                resultado = numeroEscolhido / i;
+                String resposta = String.format("""
+                        %d / %d = %d
+                        """, numeroEscolhido, i, resultado);
+                System.out.println(resposta);
             }
-        }
+        }else if(operacaoMatematica.equals(4)){
+            System.out.println("Digite um número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
 
-        if (valorI.equals(4.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = escolha - i;
-
-                String mensagem = String.format("""
-                    %2f - %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
+            for (int i = 1; i <= 10; i++){
+                resultado = numeroEscolhido - i;
+                String resposta = String.format("""
+                        %d - %d = %d
+                        """, numeroEscolhido, i, resultado);
+                System.out.println(resposta);
             }
-        }
+        } else if (operacaoMatematica.equals(5)) {
+            System.out.println("Digite um número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
 
-        if (valorI.equals(5.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = Math.pow(escolha, i) ;
-
-                String mensagem = String.format("""
-                    %2f - %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
+            for (int i = 1; i <= 10; i++){
+                Double resultadoPotencia = Math.pow(numeroEscolhido, i);
+                String resposta = String.format("""
+                        %d ** %d = %.2f
+                        """, numeroEscolhido, i, resultadoPotencia);
+                System.out.println(resposta);
             }
+        } else if(operacaoMatematica.equals(6)){
+            System.out.println("Digite o número inteiro: ");
+            Integer numeroEscolhido = leitor.nextInt();
+
+            for (int i = 1; i <= 10; i++){
+                resultado = numeroEscolhido % i;
+                String resposta = String.format("""
+                        %d %% %d = %d
+                        """, numeroEscolhido, i, resultado);
+                System.out.println(resposta);
         }
-
-        if (valorI.equals(6.0)) {
-
-            for (int i = 1; i <=10 ; i++) {
-
-                resultado = escolha % i;
-
-                String mensagem = String.format("""
-                    %2f - %d = %2f
-                    """, escolha, i, resultado);
-
-
-                System.out.println(mensagem);
-            }
+    } else{
+            System.out.println("Até logo!");
         }
-
-
-        if (valorI.equals(0)){
-            System.out.println("Até logo");
-        }
-
-    }
+}
 }

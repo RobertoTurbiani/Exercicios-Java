@@ -2,31 +2,29 @@ import java.util.Scanner;
 
 public class TesteLanchonete {
     public static void main(String[] args) {
-
         Scanner in = new Scanner(System.in);
-
-        Pedido pedido01 = new Pedido("Quarteirão", "Coca", 20.0);
-        Pedido pedido02 = new Pedido("Dog do Zé", "Proibida", 10.0);
+        Pedido pedido1 = new Pedido("Quarteirão", "Coca", 20.0);
+        Pedido pedido2 = new Pedido("Dogão do Zé", "Proibida", 10.0);
         Lanchonete lanchonete = new Lanchonete("Zéc Donalds");
+
         Double total = 0.0;
         Integer inputUser;
         do {
             System.out.println("""
-                    Qual pedido preparar?
-                    
+                    Qual combo devo preparar?
                     1 - %s, %s
                     2 - %s, %s
-                    
-                    """.formatted(pedido01.getLanche(), pedido01.getBebida(),
-                    pedido02.getLanche(), pedido02.getBebida()));
+                    """.formatted(pedido1.getLanche(), pedido1.getBebida(),
+                    pedido2.getLanche(), pedido2.getBebida()));
             inputUser = in.nextInt();
+
 
             switch (inputUser){
                 case 1:
-                    lanchonete.prepararPedido(pedido01);
+                    lanchonete.prepararPedido(pedido1);
                     break;
                 case 2:
-                    lanchonete.prepararPedido(pedido02);
+                    lanchonete.prepararPedido(pedido2);
                     break;
                 default:
                     System.out.println("Pedido não existe");
@@ -34,6 +32,6 @@ public class TesteLanchonete {
 
         } while (inputUser != 0);
 
-        lanchonete.exibirRelatorio();
+        lanchonete.exibirRelatorioi();
     }
 }

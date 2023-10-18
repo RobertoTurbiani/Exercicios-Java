@@ -1,14 +1,12 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NumerosRandomicos {
-
     public static void main(String[] args) {
-        Integer numeroRandomico = ThreadLocalRandom.current().nextInt( -1,11);
-
-        Double numeroRandomicoReal = ThreadLocalRandom.current().nextDouble(10.4, 15.2);
-
+        Integer numeroRandomico = ThreadLocalRandom.current().nextInt();
         System.out.println(numeroRandomico);
-        System.out.println(numeroRandomicoReal);
 
+        Double numeroRandomicoReal = ThreadLocalRandom.current().nextDouble(0.0, 1.50);
+
+        System.out.println(numeroRandomicoReal);
     }
 }

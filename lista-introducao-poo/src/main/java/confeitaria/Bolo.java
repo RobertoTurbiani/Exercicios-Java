@@ -1,51 +1,78 @@
-package confeitaria;
+package Confeitaria;
 
 public class Bolo {
+    //Modificador de acesso:
+    // private - somente a própria classe acessa
+    // public - todo projeto acessa
+    // default - somente o próprio pacote
 
-    String sabor1 = "Chocolate";
-    String sabor2 = "Morango";
-    String sabor3 = "Abacaxi";
+    //Encapsulamento
+    private String sabor;
+    private Double valor;
+    private Integer quantidadeVendida;
 
-    Double preco = 0.0;
+    public Bolo(String sabor, Double valor){
+        this.sabor = sabor;
+        this.valor = valor;
+        this.quantidadeVendida = 0;
+    }
 
-    Integer quantidade = 100;
+    //alt + insert
+    public Bolo(String sabor, Double valor, Integer quantidadeVendida) {
+        this.sabor = sabor;
+        this.valor = valor;
+        this.quantidadeVendida = quantidadeVendida;
+    }
 
-    void comprarBolo(Integer qtd){
+    //Um construtor pode ser sobrecarregado
+    public Bolo(String sabor){
+        this.sabor = sabor;
+        this.valor = 25.0;
+        this.quantidadeVendida = 0;
+    }
 
-        if (qtd >= 100) {
-            System.out.println(String.format("""
-                    Seu pedido ultrapassou
-                    nosso limite diário para esse bolo.
-                    """));
-        } else {
-            quantidade += qtd ;
-        }
-    };
+    void comprarBolo(Integer quantidadeDesejada){
+        Integer verificacao =  quantidadeVendida + quantidadeDesejada;
+            if(verificacao > 100){
+                System.out.println("Seu pedido ultrapassou nosso limite diário para esse bolo.");
+            } else{
+                System.out.println("Comprou!");
+                quantidadeVendida += quantidadeDesejada;
+            }
+    }
 
-    void exibirRelatorio (Integer sabor, Integer qtd) {
+    void exibirRelatorio(){
+        Double valorTotal = quantidadeVendida * valor;
+        System.out.println(String.format("""
+                O bolo sabor %s, foi comprado %d vezes hoje, totalizando R$%.2f
+                """, sabor, quantidadeVendida, valorTotal));
+    }
 
-        if (sabor.equals(1)) {
-            Integer qtdChocolate = qtd;
-            System.out.println(String.format("""
-                        O bolo sabor  de %s, foi comprado %d vezes hoje, totalizando R$ %.2f           
-                    """, sabor1, qtdChocolate, preco));
+    //Get & Set
+    //Get: pegar uma informação
+    //Set: alterar um valor
+    public void setSabor(String sabor){
+        this.sabor = sabor;
+        //this sempre se refere ao atributo da classe
+    }
 
-        } else if (sabor.equals(2)) {
-            Integer qtdMorango = qtd;
-            System.out.println(String.format("""
-                        O bolo sabor  de %s, foi comprado %d vezes hoje, totalizando R$ %.2f           
-                    """, sabor2, qtdMorango, preco));
+    public String getSabor(){
+        return this.sabor;
+    }
 
-        } else if (sabor.equals(3)) {
-            Integer qtdabacaxi = qtd;
-            System.out.println(String.format("""
-                        O bolo sabor  de %s, foi comprado %d vezes hoje, totalizando R$ %.2f           
-                    """, sabor3, qtdabacaxi, preco));
+    public Double getValor() {
+        return valor;
+    }
 
-        }
-    };
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
 
+    public Integer getQuantidadeVendida() {
+        return quantidadeVendida;
+    }
 
-};
-
-
+    public void setQuantidadeVendida(Integer quantidadeVendida) {
+        this.quantidadeVendida = quantidadeVendida;
+    }
+}

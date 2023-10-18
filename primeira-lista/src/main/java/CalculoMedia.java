@@ -1,11 +1,11 @@
 public class CalculoMedia {
     public static void main(String[] args) {
-        String nome = "leopoldo";
-        Integer nota01 = 7;
-        Integer nota02 = 9;
+        String nome = "Jeferson";
+        Integer nota01 = 10;
+        Integer nota02 = 0;
 
-        Integer media = (nota01 + nota02) / 2;
+        Integer mediaNota = (nota01 + nota02) / 2;
 
-        System.out.println("Olá, "+ nome + ". Sua média foi de " + media);
+        System.out.println("Olá, " + nome + ". Sua média foi de " + mediaNota);
     }
 }

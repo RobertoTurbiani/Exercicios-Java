@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DesafioNumeros {
     public static void main(String[] args) {
 
-        Scanner mensagem = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
 
         System.out.println("Digite um número");
 
@@ -17,13 +17,13 @@ public class DesafioNumeros {
         List <Integer> listaPar = new ArrayList();
         List <Integer> listaImpar = new ArrayList();
 
-        Integer adicionaNumero;
+        Integer adicionarNumero;
         do {
-            adicionaNumero = mensagem.nextInt();
-            if (adicionaNumero != 0) {
-                listaNumeros.add(adicionaNumero);
+            adicionarNumero = leitor.nextInt();
+            if (adicionarNumero != 0) {
+                listaNumeros.add(adicionarNumero);
             }
-        } while (adicionaNumero != 0);
+        } while (adicionarNumero != 0);
 
         for (int i = 0; i < listaNumeros.size(); i++) {
 
@@ -46,8 +46,7 @@ public class DesafioNumeros {
             };
         }
 
-
-        String mensagemFinal = String.format("""
+        String resposta = String.format("""
                Os números pares são %d
                Os números impares são %d
                A soma dos números deu %d
@@ -55,7 +54,7 @@ public class DesafioNumeros {
                O menor número é %d
                 """, listaPar.size(), listaImpar.size(), soma, maior, menor);
 
-        System.out.println(mensagemFinal);
+        System.out.println(resposta);
 
     }
 }

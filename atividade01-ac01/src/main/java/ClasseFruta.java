@@ -5,37 +5,37 @@ import java.util.Scanner;
 public class ClasseFruta {
     public static void main(String[] args) {
 
-        List <String> listaFrutas = new ArrayList();
-        listaFrutas.add("Uva");
-        listaFrutas.add("Banana");
-        listaFrutas.add("Maça");
+        List <String> nomesFrutas = new ArrayList();
+        nomesFrutas.add("Banana");
+        nomesFrutas.add("Maça");
+        nomesFrutas.add("Manga");
 
         Scanner leitor = new Scanner(System.in);
 
-        System.out.println("digite o nome de uma fruta");
+        System.out.println("Digite o nome de uma fruta para saber se ela existe na lista: ");
 
-        String texto =leitor.nextLine();
+        String nome = leitor.nextLine();
 
-         int frutList = 0;
-        for (int i = 0; i < listaFrutas.size(); i++) {
-            if (texto.equalsIgnoreCase(listaFrutas.get(i))){
-                frutList++;
-            };
+        int listaFruta = 0;
+        for (int i = 0; i < nomesFrutas.size(); i++) {
+            if (nome.equalsIgnoreCase(nomesFrutas.get(i))){
+                listaFruta++;
+            }
         }
 
-        String msg = String.format("""
+        String mensagem = String.format("""
                 a fruta %S já existe na lista
-                """, texto);
+                """, nome);
 
-        String msg2 = String.format("""
+        String mensagem2 = String.format("""
                A fruta %s ainda não existe na lista
-                """, texto);
+                """, nome);
 
-        if (frutList >= 0) {
-            System.out.println(msg);
+        if (listaFruta >= 0) {
+            System.out.println(mensagem);
         }
         else {
-            System.out.println(msg2);
+            System.out.println(mensagem2);
         }
     }
 }

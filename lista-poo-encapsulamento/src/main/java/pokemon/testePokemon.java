@@ -1,38 +1,34 @@
-package pokemon;
+package Pokemon;
 
-public class testePokemon {
+public class TestePokemon {
     public static void main(String[] args) {
+        Pokémon pokemon01 = new Pokémon("Pikachu", "Elétrico", 40, 15);
+        Pokémon pokemon02 = new Pokémon("Charmander", "Fogo", 70, 5);
 
+        TreinadorPokemon treinadorPokemon01 = new TreinadorPokemon("Bruno");
+        TreinadorPokemon treinadorPokemon02 = new TreinadorPokemon("Danilo");
 
-        Pokemon pokemon01 =new Pokemon("Pikachu", "elétrico" ,100.0, 5);
-        Pokemon pokemon02 =new Pokemon("Charmander", "fogo" ,130.0, 15);
-
-        TreinadorPokemon treinar01 = new TreinadorPokemon("Roberto", 1);
-        TreinadorPokemon treinar02 = new TreinadorPokemon("Roberto", 1);
-
-
-
-
-        treinar01.treinarPokemon(pokemon01);
-        treinar01.treinarPokemon(pokemon01);
-        treinar01.treinarPokemon(pokemon01);
-        treinar01.treinarPokemon(pokemon01);
-        treinar01.treinarPokemon(pokemon01);
+        treinadorPokemon01.treinarPokemon(pokemon01);
+        treinadorPokemon01.treinarPokemon(pokemon01);
+        treinadorPokemon01.treinarPokemon(pokemon01);
+        treinadorPokemon01.treinarPokemon(pokemon01);
+        treinadorPokemon01.treinarPokemon(pokemon01);
 
         pokemon01.exibirPokemon();
 
-        treinar01.evoluirPokemon(pokemon01, "Raichu");
+        treinadorPokemon01.evoluirPokemon(pokemon01, "Raichu");
 
+        pokemon01.exibirPokemon();
 
-        treinar02.treinarPokemon(pokemon02);
-        treinar02.treinarPokemon(pokemon02);
+        treinadorPokemon02.treinarPokemon(pokemon02);
+        treinadorPokemon02.treinarPokemon(pokemon02);
 
         pokemon02.exibirPokemon();
 
-        treinar02.evoluirPokemon(pokemon02, "Charmeleon");
+        treinadorPokemon02.evoluirPokemon(pokemon02, "Charmeleon");
 
-        treinar01.treinador();
-        treinar02.treinador();
+        treinadorPokemon01.statusTreinador();
+        treinadorPokemon02.statusTreinador();
 
     }
 }

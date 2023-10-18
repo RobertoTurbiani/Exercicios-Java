@@ -1,12 +1,14 @@
 public class Pedido {
 
-    // atributos
-    // Construtor
-    // metodos
-    // get set
+    //atributos
+    //contrutor
+    //metodos
+    //get set
 
     private String lanche;
+
     private String bebida;
+
     private Double valor;
 
     public Pedido(String lanche, String bebida, Double valor) {
@@ -15,14 +17,11 @@ public class Pedido {
         this.valor = valor;
     }
 
-    public void exibirPedido(){
-        System.out.println("""
-                Pedido:
-                lanche %s
-                bebida %s
-                valor %.2f
-                """.formatted(lanche,bebida,valor));
-    }
+
+
+//    public void jogarNoLixo(){
+//
+//    }
 
     public String getLanche() {
         return lanche;
@@ -44,4 +43,16 @@ public class Pedido {
         return valor;
     }
 
+    public void exibirPedido(){
+        System.out.println("""
+                    Pedido:
+                    lanche %s
+                    bebida: %s
+                    valor: %.2f
+                    """.formatted(lanche, bebida, valor));
+    }
+
+//    public void setValor(Double valor) {
+//        this.valor = valor;
+//    }
 }

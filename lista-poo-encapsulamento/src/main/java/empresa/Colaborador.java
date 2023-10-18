@@ -1,23 +1,23 @@
-package empresa;
+package Empresa;
 
 public class Colaborador {
-   private String nome;
-   private String cargo;
-   private Double salario;
+    private String nome;
+    private String cargo;
+    private Double salario;
 
-    public Colaborador(String nome, String cargo, Double salario) {
+    public Colaborador(String nome, String cargo, Double salario){
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
     }
 
-public void exibirColaborador(){
-    System.out.println("""
-            Nome: %s
-            Cargo: %s
-            Salario: %.2f 
-            """.formatted(nome,cargo,salario));
-}
+    public void exibirColaborador(){
+        System.out.println(String.format("""
+                nome: %s
+                cargo: %s
+                salario: %.2f
+                """, nome, cargo, salario));
+    }
 
     public String getNome() {
         return nome;

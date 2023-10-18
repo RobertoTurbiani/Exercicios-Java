@@ -1,108 +1,31 @@
-package confeitaria;
-
-import java.util.Scanner;
+package Confeitaria;
 
 public class App {
     public static void main(String[] args) {
-        Scanner leitor = new Scanner(System.in);
+        Bolo bolo1 = new Bolo("Chocolate", 20.0);
+        bolo1.setSabor("Chocolate");
+        bolo1.setValor(20.0);
+        bolo1.setQuantidadeVendida(0);
 
-        Bolo loja = new Bolo();
-
-        Integer escolha;
-        Integer estoqueChoc = 0;
-        Integer estoqueMor = 0;
-        Integer estoqueAbac = 0;
-
-        String mensagemBolo = String.format("""
-                Escolha quantos bolos você quer comprar
-                """);
-
-        String mensagem = String.format("""
-                    -------------------------
-                    | 1) Chocolate          |
-                    | 2) Morango            |
-                    | 3) Abacaxi            |
-                    | 4) Sair               |
-                    ------------------------
-                    """);
-
-        System.out.println(mensagem);
+        Bolo bolo2 = new Bolo("Morango", 30.0);
 
 
-
-        do {
-
-
-            System.out.println("Escolha o bolo");
-            escolha = leitor.nextInt();
+        Bolo bolo3 = new Bolo("Laranja");
 
 
-            if (escolha.equals(1)) {
+        bolo1.comprarBolo(10);
+        bolo3.comprarBolo(21);
+        bolo2.comprarBolo(200);
+        bolo3.comprarBolo(53);
+        bolo1.comprarBolo(38);
+        bolo2.comprarBolo(45);
 
 
-                System.out.println(mensagemBolo);
-                Integer quantidade = leitor.nextInt();
-                estoqueChoc += quantidade;
+        bolo1.exibirRelatorio();
+        bolo2.exibirRelatorio();
+        bolo3.exibirRelatorio();
 
-                if (estoqueChoc > 100){
-                    loja.preco = 35.00 * estoqueChoc;
-                    loja.comprarBolo(estoqueChoc);
-                    break;
-                } else {
-                    loja.preco = 35.00 * estoqueChoc;
-                    loja.comprarBolo(estoqueChoc);
-
-                   loja.exibirRelatorio(escolha, estoqueChoc);
-
-                    System.out.println(mensagem);
-                }
-
-            } else if (escolha.equals(2)) {
-
-
-                System.out.println(mensagemBolo);
-                Integer quantidade = leitor.nextInt();
-                estoqueMor += quantidade;
-
-                if (quantidade > 100){
-                    loja.preco = 35.00 * estoqueMor;
-                    loja.comprarBolo(estoqueMor);
-                    break;
-                } else {
-                    loja.preco = 45.00 * estoqueMor;
-                    loja.comprarBolo(estoqueMor);
-
-                    loja.exibirRelatorio(escolha, estoqueMor);
-
-                    System.out.println(mensagem);
-                }
-
-            }
-
-            else  if (escolha.equals(3)) {
-
-                System.out.println(mensagemBolo);
-                Integer quantidade = leitor.nextInt();
-                estoqueAbac += quantidade;
-
-                if (quantidade> 100){
-                    loja.preco = 35.00 * estoqueAbac;
-                    loja.comprarBolo(estoqueAbac);
-                    break;
-                } else {
-                loja.preco = 40.00 * estoqueAbac;
-                loja.comprarBolo(estoqueAbac);
-
-                loja.exibirRelatorio(escolha, estoqueAbac);
-
-                System.out.println(mensagem);
-                }
-
-            }
-
-
-        }
-
-        while (escolha != 4);
+        String saborBolo1 = bolo1.getSabor();
+        System.out.println("Sabor do bolo 1:" + saborBolo1);
     }
 }

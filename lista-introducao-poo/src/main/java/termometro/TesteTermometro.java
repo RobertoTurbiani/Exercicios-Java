@@ -1,27 +1,25 @@
-package termometro;
+package Termometro;
 
 public class TesteTermometro {
     public static void main(String[] args) {
-        Termometro termometro = new Termometro();
-        termometro.temperaturaAtual = 35.0;
-        termometro.temperaturaMax = 90.0;
-        termometro.temperaturaMin = -20.0;
+        Termometro termometro = new Termometro(30.0, 100.0, -30.0);
 
 
-        termometro.aumentaTemperatura(36.0);
-        System.out.println(termometro.temperaturaAtual);
+
+        termometro.aumentaTemperatura(20.0);
+        System.out.println(termometro.getTemperaturaAtual());
         termometro.exibeFahreinheit();
 
-        termometro.diminuiTemperatura(25.0);
-        System.out.println(termometro.temperaturaAtual);
+        termometro.diminuiTemperatura(15.0);
+        System.out.println(termometro.getTemperaturaAtual());
         termometro.exibeFahreinheit();
 
-        termometro.diminuiTemperatura(52.0);
-        System.out.println(termometro.temperaturaAtual);
+        termometro.diminuiTemperatura(45.0);
+        System.out.println(termometro.getTemperaturaAtual());
         termometro.exibeFahreinheit();
 
-        termometro.aumentaTemperatura(550.0);
-        System.out.println(termometro.temperaturaAtual);
+        termometro.aumentaTemperatura(350.0);
+        System.out.println(termometro.getTemperaturaAtual());
         termometro.exibeFahreinheit();
 
     }

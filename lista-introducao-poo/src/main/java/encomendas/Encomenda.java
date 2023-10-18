@@ -1,12 +1,19 @@
-package encomendas;
+package Encomendas;
 
 public class Encomenda {
-    String tamanho;
-    String enderecoRemetente;
-    String enderecoDestinatario;
-    Double distancia = 0.0;
-    Double valorEncomenda = 0.0;
+    private String tamanho;
+    private String enderecoRemetente;
+    private String enderecoDestinatario;
+    private Double distancia;
+    private Double valorEncomenda;
 
+    public Encomenda(String tamanho, String enderecoRemetente, String enderecoDestinatario, Double distancia, Double valorEncomenda){
+        this.tamanho = tamanho;
+        this.enderecoRemetente = enderecoRemetente;
+        this.enderecoDestinatario = enderecoDestinatario;
+        this.distancia = distancia;
+        this.valorEncomenda = valorEncomenda;
+    }
 
     Double calcularFrete(){
         Double addTamanho = 0.0;
@@ -48,5 +55,45 @@ public class Encomenda {
                                 
                 """, enderecoRemetente, enderecoDestinatario, tamanho, valorEncomenda, frete, valorTotal));
     }
+    public String getTamanho() {
+        return tamanho;
     }
 
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getEnderecoRemetente() {
+        return enderecoRemetente;
+    }
+
+    public void setEnderecoRemetente(String enderecoRemetente) {
+        this.enderecoRemetente = enderecoRemetente;
+    }
+
+    public String getEnderecoDestinatario() {
+        return enderecoDestinatario;
+    }
+
+    public void setEnderecoDestinatario(String enderecoDestinatario) {
+        this.enderecoDestinatario = enderecoDestinatario;
+    }
+
+    public Double getDistancia() {
+        return distancia;
+    }
+
+    public void setDistancia(Double distancia) {
+        this.distancia = distancia;
+    }
+
+    public Double getValorEncomenda() {
+        return valorEncomenda;
+    }
+
+    public void setValorEncomenda(Double valorEncomenda) {
+        this.valorEncomenda = valorEncomenda;
+    }
+
+
+}
